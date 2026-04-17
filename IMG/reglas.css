@@ -1,0 +1,114 @@
+
+/* ===== ESTILOS GENERALES (BASE MÓVIL) ===== */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #fff0f3);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado y pie */
+.header, .pie { 
+    background-color:#ebccd1; 
+    color: black; 
+    text-align: center; 
+    padding: 20px; 
+}
+
+/* Barra de navegación */
+.navbar { 
+    background-color:  #de8a98; 
+}
+.menu { 
+    list-style: none; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+.menu li a { 
+    color: black; 
+    text-decoration: none; 
+    padding: 15px; 
+    display: block; 
+}
+.menu li a:hover {
+    background-color: #ffdee4;
+    transition: 0.3s;
+}
+
+/* Contenedor principal FLEXIBLE */
+.contenedor-principal {
+    display: flex;
+    flex-wrap: wrap; /* EN MÓVIL: SE APILAN */
+    padding: 10px;
+}
+
+.contenido {
+    flex: 1 1 60%; /* El texto ocupará el 60% del ancho */
+    padding: 10px;
+    background: #ebccd1;
+}
+
+.lateral {
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco transparente */
+    border-left: 4px solid #de8a98;             /* Una línea rosa a la izquierda */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.lateral h3 {
+    color: #a34b5b; /* Un rosa más oscuro para los subtítulos */
+    margin-bottom: 10px;
+}
+
+img {
+    border: 5px solid #de8a98; /* Marco rosa */
+    border-radius: 15px;       
+    max-width: 100%;           
+    height: auto;
+}
+
+/* Imágenes fluidas (nunca se desbordan) */ 
+ .img-fluida {
+    width: 300px; 
+    height: 250px;
+    object-fit: cover;  
+    border-radius: 8px;
+    border: 5px solid #de8a98; 
+    margin: 15px auto; 
+    display: block; 
+    border: 4px solid #ff69b4;
+}
+
+/* ===== MEDIA QUERY PARA TABLETS Y ESCRITORIO (pantallas > 700px) ===== */
+@media (min-width: 700px) {
+    .contenedor-principal {
+        flex-wrap: nowrap; /* ESCRITORIO: UNO AL LADO DEL OTRO */
+    }
+    
+    .contenido {
+        flex: 3; /* Ocupa 3/4 del espacio */
+        margin-right: 10px;
+    }
+    
+    .lateral {
+        flex: 1; /* Ocupa 1/4 del espacio */
+    }
+}
+
+/* Ajustes adicionales para pantallas muy grandes */
+@media (min-width: 1200px) {
+    .contenedor-principal {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+                
